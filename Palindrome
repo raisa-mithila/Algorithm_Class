@@ -1,0 +1,36 @@
+///Class : 2
+#include<bits/stdc++.h>
+using namespace std;
+int main ()
+{
+    string str;
+    stack<char>st;
+    queue<char>qu;
+    getline(cin,str);
+
+    for(int i=0; i<str.size(); i++)
+    {
+        st.push(str[i]);
+        qu.push(str[i]);
+    }
+    bool ispalindrome=true;
+    while(!st.empty())
+    {
+        if(st.top() != qu.front())
+        {
+            ispalindrome = false;
+            break;
+        }
+        st.pop();
+        qu.pop();
+    }
+    if(ispalindrome==true)
+    {
+        cout<<"Palindrome"<<endl;
+    }
+    else
+    {
+        cout<<"Not Palindrome"<<endl;
+    }
+    return 0;
+}
